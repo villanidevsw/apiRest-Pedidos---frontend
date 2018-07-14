@@ -11,5 +11,11 @@
 
 
 <ion-content padding>
-
+    <ion-avatar>
+      <!-- o ponto de interrogacao eh o navegador seguro do angular, caso a variavel nao tenha valor, ela nao ira -->
+       <!-- gerar erro na pagina, quando a mesma for carregada -->
+        <img class="circle" [src]="cliente?.imageUrl || 'assets/imgs/avatar-blank.png'">
+      </ion-avatar>
+      <h2 text-center>{{cliente?.nome}}</h2>
+      <p text-center>{{cliente?.email}}</p>
 </ion-content>

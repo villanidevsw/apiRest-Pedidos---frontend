@@ -25,11 +25,15 @@ export class CategoriasPage {
 
   findAll() {
     this.categoriaService.findAll()
-      .subscribe(response => {
+      .subscribe((response: CategoriaDTO[]) => {
         this.items = response;
       },
-        error => {}
+        error => { }
       );
+  }
+
+  showProdutos() {
+    this.navCtrl.push('ProdutosPage');
   }
 
 }

@@ -32,6 +32,15 @@ export class HomePage {
     this.menu.swipeEnable(true);
   }
 
+  ionViewDidEnter() {
+    this.auth.refreshToken()
+      .subscribe(response => {
+        this.auth.successfulLogin(response.headers.get('Authorization'));
+        this.navCtrl.setRoot('CategoriasPage');
+      },
+        error => { });
+  }
+
   login() {
     // por causa do lazy load posso passar a string com o nome
     // do componente da página
@@ -48,4 +57,8 @@ export class HomePage {
       },
       error => {});
   }
+
+  signup() {
+        this.navCtrl.push('SignupPage');
+      }
 }
