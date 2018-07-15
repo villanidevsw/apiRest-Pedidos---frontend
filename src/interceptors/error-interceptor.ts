@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx'; // IMPORTANTE: IMPORT ATUALIZADO
 import { StorageService } from '../services/storage.service';
-import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 import { FieldMessage } from '../models/fieldmessage';
+//import { AlertController } from 'ionic-angular';
+import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -98,12 +99,12 @@ export class ErrorInterceptor implements HttpInterceptor {
   }
 
   private listErrors(messages: FieldMessage[]): string {
-    let s: string = '';
+    let error: string = '';
     for (var i = 0; i < messages.length; i++) {
-      s = s + '<p><strong>' + messages[i].fieldName + "</strong>: "
+      error = error + '<p><strong>' + messages[i].fieldName + "</strong>: "
         + messages[i].message + '</p>';
     }
-    return s;
+    return error;
   }
 
 }

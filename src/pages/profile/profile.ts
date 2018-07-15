@@ -5,7 +5,6 @@ import { LocalUser } from '../../models/local_user';
 import { ClienteDTO } from '../../models/cliente.dto';
 import { ClienteService } from '../../services/domain/cliente.service';
 import { API_CONFIG } from '../../config/api.config';
-import { Observable } from 'rxjs';
 
 
 @IonicPage()

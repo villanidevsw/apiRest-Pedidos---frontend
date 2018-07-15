@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/Rx";
 import { ClienteDTO } from "../../models/cliente.dto";
 import { API_CONFIG } from "../../config/api.config";
@@ -36,6 +36,8 @@ export class ClienteService {
   }
 
   insert(cliente: ClienteDTO) {
+    // como o corpo da resposta vem vazio, deixa o response type como text
+    // para evitar erro no parse do json (que é feito automaticamente pelo framework)
     return this.http.post(
       `${API_CONFIG.baseUrl}/${API_ENDPOINTS.clientes}`,
       cliente,

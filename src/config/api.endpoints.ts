@@ -4,5 +4,6 @@ export const API_ENDPOINTS = {
   refresh_token: "auth/refresh_token",
   clientes: "clientes",
   estados: "estados",
-  cidades: "cidades"
+  cidades: "cidades",
+  produtos: "produtos"
 }
