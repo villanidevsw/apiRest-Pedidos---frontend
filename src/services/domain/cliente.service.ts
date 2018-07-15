@@ -14,11 +14,11 @@ export class ClienteService {
     public storage: StorageService) {
   }
 
-  findById(id: string): Observable<ClienteDTO> {
-    return this.http.get<ClienteDTO>(`${API_CONFIG.baseUrl}/${API_ENDPOINTS.clientes}/${id}`);
+  findById(id: string) {
+    return this.http.get(`${API_CONFIG.baseUrl}/${API_ENDPOINTS.clientes}/${id}`);
   }
 
-  findByEmail(email: string): Observable<ClienteDTO> {
+  findByEmail(email: string) {
     //movido para o auth interceptor
     /*let token = this.storage.getLocalUser().token;
     let authHeader = new HttpHeaders({ 'Authorization': 'Bearer ' + token });
@@ -27,7 +27,7 @@ export class ClienteService {
       `${API_CONFIG.baseUrl}/${API_ENDPOINTS.clientes}/email?value=${email}`,
       { 'headers': authHeader });*/
 
-    return this.http.get<ClienteDTO>(`${API_CONFIG.baseUrl}/${API_ENDPOINTS.clientes}/email?value=${email}`);
+    return this.http.get(`${API_CONFIG.baseUrl}/${API_ENDPOINTS.clientes}/email?value=${email}`);
   }
 
   getImageFromBucket(id: string): Observable<any> {

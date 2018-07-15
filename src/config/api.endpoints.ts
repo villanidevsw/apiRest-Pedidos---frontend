@@ -5,5 +5,7 @@ export const API_ENDPOINTS = {
   clientes: "clientes",
   estados: "estados",
   cidades: "cidades",
-  produtos: "produtos"
+  produtos: "produtos",
+  produtosPaginado: "produtos/paginada",
+  pedidos: "pedidos"
 }
